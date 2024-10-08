@@ -1,7 +1,13 @@
 {
   "name": "opquiz-renewex",
-  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
   "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "installTools": true
+    },
     "ghcr.io/devcontainers/features/common-utils:2": {
       "configureZshAsDefaultShell": true
     },
