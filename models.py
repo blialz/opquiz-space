@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import enum
 from datetime import date, datetime
-from typing import Annotated, Any
+from typing import Any
 
 import sqlalchemy as sa
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
@@ -11,8 +11,10 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 class Base(DeclarativeBase):
     type_annotation_map: dict[type[Any], sa.types.TypeEngine[Any]] = {
         datetime: sa.types.TIMESTAMP(timezone=True),
-        float: Annotated[sa.types.Numeric, 10, 2],
     }
+
+    def __repr__(self) -> str:
+        return f"<{self.__class__.__name__} n°{self.id} - {self.__str__()}>"
 
 
 class Techno(enum.StrEnum):
@@ -42,6 +44,9 @@ class Site(Base):
 
     contracts: Mapped[list["Contract"]] = relationship(back_populates="site")
 
+    def __str__(self) -> str:
+        return self.name
+
 
 class Contract(Base):
     __tablename__ = "contracts"
@@ -56,6 +61,9 @@ class Contract(Base):
     site: Mapped["Site"] = relationship(back_populates="contracts")
 
     invoices: Mapped[list["Invoice"]] = relationship(back_populates="contract")
+
+    def __str__(self) -> str:
+        return self.purchase_order
 
 
 class InvoiceStatus(enum.StrEnum):
@@ -79,6 +87,9 @@ class Invoice(Base):
 
     contract_id: Mapped[int] = mapped_column(sa.ForeignKey("contracts.id"))
     contract: Mapped["Contract"] = relationship(back_populates="invoices")
+
+    def __str__(self) -> str:
+        return f"{self.publication_id} - {self.status}"
 
 
 mapper_registry = sa.orm.registry()
