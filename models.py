@@ -1,10 +1,10 @@
 from __future__ import annotations
 
+import enum
 from datetime import date, datetime
 from typing import Annotated, Any
 
 import sqlalchemy as sa
-from pandas.core.interchange.dataframe_protocol import enum
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
 

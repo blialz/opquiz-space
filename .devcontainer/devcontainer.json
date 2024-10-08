@@ -11,7 +11,7 @@
   "customizations": {
     "codespaces": {
       "openFiles": [
-        "README.md"
+        "INSTRUCTIONS.md"
       ]
     },
     "vscode": {
@@ -21,6 +21,14 @@
         "charliermarsh.ruff"
       ],
       "settings": {
+        "git.autofetch": false,
+        //
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.pythonPath": "/usr/local/bin/python",
+        "jupyter.pythonPath": "/usr/local/bin/python",
+        "jupyter.alwaysTrustNotebooks": true,
+        "jupyter.notebookFileRoot": "${workspaceFolder}",
+        //
         "[python]": {
           "editor.defaultFormatter": "charliermarsh.ruff",
           "editor.formatOnSave": true,
