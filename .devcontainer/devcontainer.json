@@ -1,0 +1,60 @@
+{
+  "name": "opquiz-renewex",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "configureZshAsDefaultShell": true
+    },
+    "ghcr.io/warrenbuckley/codespace-features/sqlite:latest": {}
+  },
+  "postCreateCommand": "pip install --user -r requirements.txt",
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "INSTRUCTIONS.md"
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "charliermarsh.ruff"
+      ],
+      "settings": {
+        "git.autofetch": false,
+        //
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.pythonPath": "/usr/local/bin/python",
+        "jupyter.pythonPath": "/usr/local/bin/python",
+        "jupyter.alwaysTrustNotebooks": true,
+        "jupyter.notebookFileRoot": "${workspaceFolder}",
+        //
+        "[python]": {
+          "editor.defaultFormatter": "charliermarsh.ruff",
+          "editor.formatOnSave": true,
+          "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": "explicit",
+            "source.organizeImports.ruff": "explicit"
+          }
+        }
+      },
+      "ruff.lint.args": [
+        "--extend-ignore=E203,F841,F401,RUF100,B007"
+      ],
+      "notebook.formatOnSave.enabled": true,
+      "notebook.codeActionsOnSave": {
+        "source.fixAll.ruff": true,
+        "source.organizeImports.ruff": true
+      }
+    }
+  },
+  "forwardPorts": [
+    8888
+  ],
+  "portsAttributes": {
+    "8888": {
+      "label": "JupyterLab",
+      "onAutoForward": "notify"
+    }
+  }
+}
