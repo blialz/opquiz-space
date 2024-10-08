@@ -1,8 +1,7 @@
 {
   "name": "opquiz-renewex",
   "image": "mcr.microsoft.com/devcontainers/python:3.12",
-  "postCreateCommand": "bash /workspace/.devcontainer/post-create.sh",
-  "workspaceFolder": "/workspace",
+  "postCreateCommand": "bash /workspaces/opquiz-space/.devcontainer/post-create.sh",
   "customizations": {
     "codespaces": {
       "openFiles": [
