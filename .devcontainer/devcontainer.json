@@ -1,7 +1,13 @@
 {
   "name": "opquiz-renewex",
   "image": "mcr.microsoft.com/devcontainers/python:3.12",
-  "postCreateCommand": "bash /workspaces/opquiz-space/.devcontainer/post-create.sh",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "configureZshAsDefaultShell": true
+    },
+    "ghcr.io/warrenbuckley/codespace-features/sqlite:latest": {}
+  },
+  "postCreateCommand": "pip install --user -r requirements.txt",
   "customizations": {
     "codespaces": {
       "openFiles": [
@@ -12,7 +18,6 @@
       "extensions": [
         "ms-python.python",
         "ms-toolsai.jupyter",
-        "alexcvzz.vscode-sqlite",
         "charliermarsh.ruff"
       ],
       "settings": {
