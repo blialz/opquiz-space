@@ -3,6 +3,9 @@
     //
     "python.defaultInterpreterPath": "/usr/local/bin/python",
     "python.pythonPath": "/usr/local/bin/python",
+    "python.analysis.extraPaths": ["${workspaceFolder}"],
+    "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.initialDelaySeconds": 30,
 
     "jupyter.alwaysTrustNotebooks": true,
     "jupyter.jupyterServerType": "local",
