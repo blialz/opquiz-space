@@ -2,6 +2,7 @@
 
 <p align="center">
   <em>Use a pre-configured environment clicking on the following badge (might takes a few minutes on first setup) :</em>
+  <br><br>
   &nbsp;&nbsp;&nbsp;
   <a style="" href="https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=868068523">
       <img src="https://github.com/codespaces/badge.svg" alt="Fork and Open in GitHub Codespaces" onerror="this.style.display='none'">
