@@ -1,17 +1,13 @@
 {
   "name": "opquiz-renewex",
   "image": "mcr.microsoft.com/devcontainers/python:3.12",
-  "build": {
-    "dockerfile": "Dockerfile",
-    "context": ".."
-  },
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {
       "configureZshAsDefaultShell": true
     },
     "ghcr.io/warrenbuckley/codespace-features/sqlite:latest": {}
   },
-  "postStartCommand": "python -m ipykernel install --user --name 'codespace-env' --display-name 'Python (codespace-env)'",
+  "postCreateCommand": "pip install --user -r requirements.txt",
   "customizations": {
     "codespaces": {
       "openFiles": []
