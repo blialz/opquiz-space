@@ -1,4 +1,6 @@
 {
+    "terminal.integrated.allowMnemonics": true,
+    "terminal.integrated.commandsToSkipShell": [],
     "git.autofetch": false,
     //
     "python.defaultInterpreterPath": "/usr/local/bin/python",
