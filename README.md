@@ -2,6 +2,7 @@
 
 <p align="center">
   <em>Use a pre-configured environment clicking on the following badge :</em>
+  <br>
   <em>(might takes a few minutes on first setup)</em>
   <br><br>
   &nbsp;&nbsp;&nbsp;
