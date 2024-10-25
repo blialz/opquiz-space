@@ -1,17 +1,22 @@
 {
   "name": "opquiz-renewex",
   "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".." 
+  },
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {
       "configureZshAsDefaultShell": true
     },
     "ghcr.io/warrenbuckley/codespace-features/sqlite:latest": {}
   },
-  "postCreateCommand": "pip install --user -r requirements.txt",
+  "postStartCommand": "python -m ipykernel install --user --name 'codespace-env' --display-name 'Python (codespace-env)'",
   "customizations": {
     "codespaces": {
       "openFiles": [
-        "INSTRUCTIONS.md"
+        "INSTRUCTIONS.md",
+        "study.ipynb"
       ]
     },
     "vscode": {
@@ -25,9 +30,11 @@
         //
         "python.defaultInterpreterPath": "/usr/local/bin/python",
         "python.pythonPath": "/usr/local/bin/python",
-        "jupyter.pythonPath": "/usr/local/bin/python",
         "jupyter.alwaysTrustNotebooks": true,
+        "jupyter.jupyterServerType": "local",
+        "jupyter.defaultKernel": "codespace-env",
         "jupyter.notebookFileRoot": "${workspaceFolder}",
+        "jupyter.pythonPath": "/usr/local/bin/python",
         //
         "[python]": {
           "editor.defaultFormatter": "charliermarsh.ruff",
