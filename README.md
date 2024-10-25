@@ -1,7 +1,8 @@
 <h1 align="center"> Renewex Operational Job Quiz </h1>
 
 <p align="center">
-  <em>Use a pre-configured environment clicking on the following badge (might takes a few minutes on first setup) :</em>
+  <em>Use a pre-configured environment clicking on the following badge :</em>
+  <em>(might takes a few minutes on first setup)</em>
   <br><br>
   &nbsp;&nbsp;&nbsp;
   <a style="" href="https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=868068523">
