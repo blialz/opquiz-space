@@ -1,0 +1,37 @@
+{
+    "git.autofetch": false,
+    //
+    "python.defaultInterpreterPath": "/usr/local/bin/python",
+    "python.pythonPath": "/usr/local/bin/python",
+
+    "jupyter.alwaysTrustNotebooks": true,
+    "jupyter.jupyterServerType": "local",
+    "jupyter.defaultKernel": "codespace-env",
+    "jupyter.notebookFileRoot": "${workspaceFolder}",
+    "jupyter.pythonPath": "/usr/local/bin/python",
+
+    //
+    "[python]": {
+      "editor.defaultFormatter": "charliermarsh.ruff",
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+        "source.fixAll.ruff": "explicit",
+        "source.organizeImports.ruff": "explicit"
+      }
+    },
+    "ruff.lint.args": [
+      "--extend-ignore=E203,F841,F401,RUF100,B007"
+    ],
+    "notebook.formatOnSave.enabled": true,
+    "notebook.codeActionsOnSave": {
+      "source.fixAll.ruff": true,
+      "source.organizeImports.ruff": true
+    },
+    "files.exclude": {
+        "**/.devcontainer": true,
+        "**/__pycache__": true,
+        "**/.gitignore": true,
+        "**/README.md": true,
+        "**/requirements.txt": true
+    }
+}
